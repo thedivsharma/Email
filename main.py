@@ -10,8 +10,12 @@ from utils.constants import DEFAULT_MODEL
 
 if __name__ == "__main__":
     EMAIL_CONTENT = """
-        Listen up,
-        We wanted a demo with your cloud product and also the integration of it.
+        Hi team,  
+    We’re facing deployment issues on the cloud server.  
+    Please coordinate with the team for an urgent fix.  
+    Regards,  
+    blah blah blah
+
     """
     analyzer = Analyzer(DEFAULT_MODEL) 
     result = analyzer.analyze(EMAIL_CONTENT)
@@ -19,4 +23,4 @@ if __name__ == "__main__":
     if isinstance(result, EmailAnalysisResponse): 
         print(result.model_dump_json(indent=2))
     else:
-        print(json.dumps(result, indent=2))  
+        print(json.dumps(result, indent=2)) 

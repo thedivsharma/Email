@@ -5,7 +5,6 @@ import requests
 from pydantic import BaseModel
 from utils.constants import OLLAMA_URL, HEADERS
 
-
 class APIHandler:
     """
         Class to Handle the API Calls
@@ -23,8 +22,6 @@ class APIHandler:
             "temperature": 0,
             "format": self.build_format(schema)
         }
-
-        # print("Payload is ",payload)
 
         response = requests.post(OLLAMA_URL, json=payload, headers=HEADERS, timeout=20)
         response.raise_for_status()
